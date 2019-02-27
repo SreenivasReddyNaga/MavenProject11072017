@@ -66,7 +66,7 @@ public class GenericConfigClass {
 			driver = new InternetExplorerDriver();
 			Reporter.log("Script started execution on " + browserName + " browser", true);
 		} else if (browserName.equals("Chrome")) {
-			System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
+			System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
 			driver = new ChromeDriver();
 			Reporter.log("Script started execution on " + browserName + " browser", true);
 		} else if (browserName.equals("Edge")) {
