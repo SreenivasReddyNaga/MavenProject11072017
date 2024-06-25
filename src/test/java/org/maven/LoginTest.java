@@ -16,8 +16,11 @@ public class LoginTest extends GenericConfigClass {
 		HomePage homePage = new HomePage(driver);
 		boolean isLinkNewAvailable = loginPage.login
 				(loginData.get("UserName"), loginData.get("Password")).isDisplayed();
-		/*Assert.assertTrue(homePage.getLinkNew().isDisplayed(),
-				"Link New Not availble in HomePage");*/
+		Assert.assertTrue(homePage.getLinkNew().isDisplayed(),
+				"Link New Not availble in HomePage");
+
+		Assert.assertTrue(homePage.getLinkNew().isDisplayed(),
+				"Link New Not availble in HomePage");
 		
 		Assert.assertTrue(isLinkNewAvailable,"Link New Not availble in HomePage");
 		new HomePage(driver).logout();
