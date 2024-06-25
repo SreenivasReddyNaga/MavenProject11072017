@@ -13,10 +13,14 @@ public class LoginTest extends GenericConfigClass {
 	@Test(dataProvider = "row-based-data")
 	public void actiTimeLogin(Map<String, String> loginData) {
 		LoginPage loginPage = new LoginPage(driver);
+		HomePage homePage = new HomePage(driver);
 		boolean isLinkNewAvailable = loginPage.login
 				(loginData.get("UserName"), loginData.get("Password")).isDisplayed();
-		/*Assert.assertTrue(homePage.getLinkNew().isDisplayed(),
-				"Link New Not availble in HomePage");*/
+		Assert.assertTrue(homePage.getLinkNew().isDisplayed(),
+				"Link New Not availble in HomePage");
+
+		Assert.assertTrue(homePage.getLinkNew().isDisplayed(),
+				"Link New Not availble in HomePage");
 		
 		Assert.assertTrue(isLinkNewAvailable,"Link New Not availble in HomePage");
 		new HomePage(driver).logout();
